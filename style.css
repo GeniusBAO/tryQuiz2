@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #262724;
+  background-color: #f9f9f9;
+}
+
+.game-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f5d0e2;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+
+header {
+  background-color: #e61cb3;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Main Styles */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#game-section {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+#question-container {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#options li {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#options li:hover {
+  background-color: #eee;
+}
+
+#result-container {
+  background-color: #f11395;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+#result {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#score {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Player Section Styles */
+
+#player-section {
+  background-color: #f8aee0;
+  padding: 20px;
+  border: 1px solid #f00962;
+  margin-bottom: 20px;
+}
+
+#player-name {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+}
+
+#start-button {
+  background-color: #f395c1;
+  color: #f14f9b;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+#start-button:hover {
+  background-color: #f01c97;
+}
+
+#play-again-button {
+    background-color: #f7bfe4;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #play-again-button:hover {
+    background-color: #eb22a8;
+  }
+  
+
+/* Achievement Section Styles */
+
+#achievement-section {
+  background-color: #f1a6cf;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#achievement-image-container {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#achievement-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(230, 36, 117, 0.2);
+  display: block;
+  margin: 0 auto;
+}
+
+#achievement-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+/*BUBBLES*/
+
+#container {
+    position: relative;
+    width: 100vw;
+    height: 1cm; /* changed from 100vh to 1cm */
+    background-color: #f8caf4;
+  }  
+
+.bubble {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #007bff;
+  border-radius: 100%;
+  animation: bubble 5s infinite;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+#container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, #eb1088 10%, transparent 10%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px, 20px 0, 30px 10px, 40px 0;
+  animation: bubble-background 5s infinite;
+}
+
+@keyframes bubble-background {
+  0% {
+    background-position: 0 0, 10px 10px, 20px 0, 30px 10px, 40px 0;
+  }
+  100% {
+    background-position: 40px 0, 50px 10px, 60px 0, 70px 10px, 80px 0;
+  }
+}
+
+/*SLIDDING*/
+
+h1, h6 {
+  position: relative;
+  width: 50%;
+  height: 15px;
+  background-color: #db19ab;
+  color: #faf5f8;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1, h6 {
+  position: relative;
+  font-size: 12px;
+  margin-bottom: 5px;
+  animation: slide 10s infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+};
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+  .game-container {
+    margin: 20px auto;
+  }
+  #game-section {
+    padding: 10px;
+  }
+  #player-section {
+    padding: 10px;
+  }
+  #achievement-section {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .game-container {
+    margin: 10px auto;
+  }
+  #game-section {
+    padding: 5px;
+  }
+  #player-section {
+    padding: 5px;
+  }
+  #achievement-section {
+    padding: 5px;
+  }
+}
